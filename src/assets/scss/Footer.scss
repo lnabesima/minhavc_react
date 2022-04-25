@@ -6,6 +6,54 @@
   align-items: center;
   border-top: 1px solid hsla(199, 18%, 33%, 0.3);
 
+  &__desktop {
+    display: block;
+    @include device(mobile) {
+      display: none;
+    }
+
+    &-wrapper {
+      height: calculateRem(94px);
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid hsla(199, 18%, 33%, 0.3);
+    }
+  }
+
+  &__mobile {
+    display: none;
+    @include device(mobile) {
+      display: block;
+    }
+
+    &-wrapper {
+      padding: calculateRem(17px) calculateRem(24px) calculateRem(18px)
+        calculateRem(25px);
+      background: #fff;
+      height: calculateRem(80px);
+      box-shadow: 0px -2px 8px 0px #00000026;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-container {
+      align-items: center;
+      justify-content: center;
+      gap: calculateRem(5px);
+    }
+
+    &-icon {
+      width: calculateRem(25px);
+      height: calculateRem(25px);
+    }
+
+    &-label {
+      font-size: calculateRem(12px);
+      line-height: calculateRem(14.63px);
+      font-weight: 500;
+    }
+  }
+
   &__copyright {
     margin-left: calculateRem(70px);
     font-size: 400;
