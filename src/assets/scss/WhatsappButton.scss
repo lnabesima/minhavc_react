@@ -1,0 +1,38 @@
+@import './base';
+
+.whatsappButton {
+  align-self: flex-end;
+  background: hsla(111, 91%, 91%, 1);
+  box-shadow: 0px 1px 1px 0px hsla(0, 0%, 0%, 0.25);
+  width: calculateRem(200px);
+  height: calculateRem(42.12px);
+  align-items: center;
+  justify-content: center;
+  gap: calculateRem(14.59px);
+  padding: calculateRem(8px) calculateRem(16px);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: calculateRem(32.88px);
+
+  &__label {
+    color: $text-color;
+    font-size: calculateRem(14px);
+    line-height: calculateRem(17px);
+    font-weight: 500;
+  }
+
+  &__icon {
+    height: calculateRem(25px);
+    width: calculateRem(25px);
+    box-shadow: 0px 1px 1px 0px #00000040;
+  }
+
+  &:hover,
+  &:active {
+    background-color: adjust-color($color: #d9fdd3, $lightness: -10%);
+  }
+
+  @include device(mobile) {
+    width: 100%;
+  }
+}
