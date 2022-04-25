@@ -44,6 +44,7 @@ h1 {
   font-weight: 700;
   font-size: calculateRem(24px);
   line-height: calculateRem(29px);
+  color: $secondary-color;
 }
 
 h2 {
@@ -51,6 +52,7 @@ h2 {
   font-weight: 600;
   font-size: calculateRem(20px);
   line-height: calculateRem(24px);
+  color: $secondary-color;
 }
 
 h3 {
@@ -58,6 +60,7 @@ h3 {
   font-weight: 500;
   font-size: calculateRem(18px);
   line-height: calculateRem(22px);
+  color: $secondary-color;
 }
 
 p {

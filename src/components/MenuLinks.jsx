@@ -10,10 +10,10 @@ const MenuLinks = ({ item }) => {
       <li
         key={item.id}
         className='nav__links-item flex'
-        style={{ justifyContent: 'space-between' }}>
+        onClick={item.subMenu && handleOpenSubMenu}>
         <a
           href={item.path}
-          className='nav__links-link'
+          className='nav__links-link flex'
           onClick={item.subMenu && handleOpenSubMenu}>
           <img
             src={require(`../assets/img/${item.id}.svg`)}
@@ -30,12 +30,12 @@ const MenuLinks = ({ item }) => {
         )}
       </li>
       {subMenu && (
-        <ul className='submenu__list flex-column'>
-          {item.subMenu.map((item, index) => (
-            <li key={index} class='submenu__list-item'>
-              <a href={item.path} className='submenu__item flex'>
-                <img src='' alt='' className='submenu__item-icon'></img>
-                <span className='submenu__item-label'>{item.label}</span>
+        <ul className='nav__submenu-list flex-column'>
+          {item.subMenu.map(item => (
+            <li key={item.id} class='nav__submenu-item'>
+              <a href={item.path} className='nav__submenu-link flex'>
+                <img src='' alt='' className='nav__submenu-icon'></img>
+                <span className='nav__submenu-label'>{item.label}</span>
               </a>
             </li>
           ))}

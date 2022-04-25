@@ -1,5 +1,91 @@
 @import 'base';
 
-nav {
-  width: 15vw;
+.nav {
+  overflow-y: auto;
+  width: calculateRem(224px);
+  padding: calculateRem(21px) calculateRem(16px);
+  background: #fff;
+  box-shadow: 2px 0px 6px 0px #0000001a;
+
+  &__logo {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__separator {
+    height: 0.5px;
+    background: rgba(67, 67, 67, 0.5);
+    margin: calculateRem(21px) auto;
+  }
+
+  &__profile {
+    gap: calculateRem(8px);
+    margin-bottom: calculateRem(35px) &-picture {
+      height: calculateRem(42px);
+      width: calculateRem(42px);
+      clip-path: circle();
+    }
+
+    &-name {
+      font-size: calculateRem(16px);
+      line-height: calculateRem(20px);
+    }
+  }
+
+  &__controls {
+    gap: calculateRem(10px);
+    &-profile,
+    &-logout {
+      align-items: center;
+      gap: calculateRem(4px);
+    }
+    &-label {
+      font-size: calculateRem(10px);
+      line-height: calculateRem(12px);
+    }
+
+    &-icon {
+      height: calculateRem(16px);
+      width: calculateRem(16px);
+    }
+  }
+
+  &__links {
+    &-item {
+      padding: calculateRem(15px) 0 calculateRem(14px);
+      justify-content: space-between;
+    }
+
+    &-link {
+      align-items: center;
+      text-decoration: none;
+      color: $primary-color;
+      font-weight: 600;
+      gap: calculateRem(11px);
+    }
+  }
+
+  &__submenu {
+    &-item {
+      padding: calculateRem(14px) 0;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $text-color;
+      gap: calculateRem(11px);
+      font-weight: 500;
+      font-size: calculateRem(12px);
+      line-height: calculateRem(15px);
+    }
+
+    &-icon {
+      width: calculateRem(16px);
+      height: calculateRem(16px);
+    }
+  }
+
+  @include device(mobile) {
+    display: none;
+  }
 }

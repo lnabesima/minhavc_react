@@ -29,7 +29,7 @@ const Navbar = () => {
           className='nav__profile-picture'
         />
         <div className='nav__profile-options flex-column'>
-          <p className='nav__profile-name'>Rafael Conde</p>
+          <h2 className='nav__profile-name'>Rafael Conde</h2>
           <div className='nav__controls flex'>
             <div className='nav__controls-profile flex'>
               <img
@@ -54,7 +54,7 @@ const Navbar = () => {
       <div className='nav__sidemenu flex-column'>
         <ul className='nav__links'>
           {NavbarData.map(link => (
-            <MenuLinks item={link} />
+            <MenuLinks item={link} key={link.id} />
           ))}
         </ul>
       </div>
