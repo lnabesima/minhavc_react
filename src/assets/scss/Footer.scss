@@ -1,6 +1,21 @@
 @import 'base';
 
 .footer {
+  height: calculateRem(94px);
   justify-content: space-between;
+  align-items: center;
   border-top: 1px solid hsla(199, 18%, 33%, 0.3);
+
+  &__copyright {
+    margin-left: calculateRem(70px);
+    font-size: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: calculateRem(13px);
+    line-height: calculateRem(15.23px);
+    color: #455a64cc;
+  }
+
+  &__logo {
+    margin-right: calculateRem(70px);
+  }
 }
