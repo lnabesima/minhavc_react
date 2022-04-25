@@ -1,0 +1,34 @@
+@use 'sass:math';
+
+/* Media Queries */
+
+$breakpoints: (
+  'mobile': 1024px,
+  'laptop': 1440px,
+);
+
+/* /Media Queries */
+
+/* /Custom Utility Classes */
+
+/* Mixins & Functions */
+@function calculateRem($size) {
+  @return math.div($size, 16px) * 1rem;
+}
+
+@mixin device($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+$primary-color: #ff5900;
+$secondary-color: #5550b2;
+$secondary-color-gradient: linear-gradient(
+  108.63deg,
+  #5550b2 0%,
+  #6d66e8 100.87%
+);
+$color-1: #ff8c19;
+$text-color: #434343;
+$ok-green: #00c853;

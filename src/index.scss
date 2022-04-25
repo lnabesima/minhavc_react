@@ -1,0 +1,82 @@
+/* Custom Utility Classes */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center-between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+$primary-color: #ff5900;
+$secondary-color: #5550b2;
+$secondary-color-gradient: linear-gradient(
+  108.63deg,
+  #5550b2 0%,
+  #6d66e8 100.87%
+);
+$color-1: #ff8c19;
+$text-color: #434343;
+$ok-green: #00c853;
+
+h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: calculateRem(24px);
+  line-height: calculateRem(29px);
+}
+
+h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: calculateRem(20px);
+  line-height: calculateRem(24px);
+}
+
+h3 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: calculateRem(18px);
+  line-height: calculateRem(22px);
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: calculateRem(14px);
+  line-height: calculateRem(17.07px);
+  color: $text-color;
+}
+
+label {
+  font-style: normal;
+  font-weight: 400;
+  font-size: calculateRem(12px);
+  line-height: calculateRem(15px);
+  color: $text-color;
+}
+
+#root{
+  overflow: hidden;
+  height: 100vh
+}
