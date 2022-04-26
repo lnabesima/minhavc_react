@@ -26,7 +26,14 @@
 
   &__profile {
     gap: calculateRem(8px);
-    margin-bottom: calculateRem(35px) &-picture {
+    margin-bottom: calculateRem(35px);
+
+    @include device(mobile) {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-picture {
       height: calculateRem(42px);
       width: calculateRem(42px);
       clip-path: circle();
