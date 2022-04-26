@@ -14,7 +14,7 @@
   border-radius: 5px;
   margin-bottom: calculateRem(32.88px);
   margin-right: calculateRem(70px);
-
+  transition: background-color 0.2s;
   &__label {
     color: $text-color;
     font-size: calculateRem(14px);

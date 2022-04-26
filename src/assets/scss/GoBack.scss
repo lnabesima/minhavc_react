@@ -1,0 +1,39 @@
+@import 'base';
+
+.goBack {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  gap: calculateRem(8px);
+
+  &:hover,
+  &:active {
+    .goBack__icon {
+      background-color: adjust-color(
+        $color: rgba(85, 80, 178, 1),
+        $lightness: -20%
+      );
+    }
+  }
+
+  &__icon {
+    place-items: center;
+    height: calculateRem(40px);
+    width: calculateRem(40px);
+    border-radius: 50%;
+    background-color: $secondary-color;
+    transition: background-color 0.2s;
+    &-proper {
+      filter: invert(95%) sepia(0%) saturate(0%) hue-rotate(96deg)
+        brightness(103%) contrast(106%);
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: calculateRem(16px);
+    line-height: calculateRem(19.5px);
+    color: $secondary-color;
+  }
+}
