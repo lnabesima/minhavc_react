@@ -82,6 +82,10 @@
     transition: background-color 0.2s;
     place-items: center;
 
+    @include device(mobile) {
+      width: 100%;
+    }
+
     &:hover,
     &:active {
       background: adjust-color($color: rgba(85, 80, 178, 1), $lightness: -20%);

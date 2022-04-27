@@ -5,13 +5,15 @@
   justify-content: space-between;
   overflow-y: auto;
   width: 100%;
-  // border: 1px solid blue;
 
   background: no-repeat center bottom/contain url('./assets/img/bg.svg')
     rgba(229, 229, 229, 0.25);
 }
 
 main {
-  // border: 1px solid red;
   padding: calculateRem(50px) calculateRem(70px) 0;
+  @include device(mobile) {
+    padding-left: calculateRem(25px);
+    padding-right: calculateRem(25px);
+  }
 }
