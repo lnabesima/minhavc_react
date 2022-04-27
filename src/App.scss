@@ -8,6 +8,10 @@
 
   background: no-repeat center bottom/contain url('./assets/img/bg.svg')
     rgba(229, 229, 229, 0.25);
+
+  @include device(mobile) {
+    background-size: auto;
+  }
 }
 
 main {
