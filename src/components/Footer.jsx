@@ -4,18 +4,10 @@ import logo from '../assets/img/logo-vct.svg';
 import '../assets/scss/Footer.scss';
 import WhatsappButton from './WhatsappButton';
 
-/*
-$breakpoints: (
-  'mobile': 1024px,
-  'laptop': 1440px,
-);
-*/
-
 const Footer = () => {
   return (
     <div className='footer__wrapper flex-column'>
       <WhatsappButton />
-
       <footer className='footer__desktop'>
         <div className='footer__desktop-wrapper flex'>
           <div className='footer__copyright flex-column'>
