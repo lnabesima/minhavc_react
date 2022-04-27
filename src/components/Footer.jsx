@@ -4,7 +4,7 @@ import logo from '../assets/img/logo-vct.svg';
 import '../assets/scss/Footer.scss';
 import WhatsappButton from './WhatsappButton';
 
-const Footer = () => {
+const Footer = props => {
   return (
     <div className='footer__wrapper flex-column'>
       <WhatsappButton />
@@ -22,7 +22,11 @@ const Footer = () => {
 
       <footer className='footer__mobile'>
         <div className='footer__mobile-wrapper flex'>
-          <div className='footer__mobile-container flex-column'>
+          <div
+            className='footer__mobile-container flex-column'
+            onClick={() => {
+              props.handleOpenSidebar();
+            }}>
             <img
               src={require('../assets/img/options.svg').default}
               alt=''

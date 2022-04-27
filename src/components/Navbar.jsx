@@ -7,11 +7,14 @@ import profile from '../assets/img/profile.png';
 import MenuLinks from './MenuLinks';
 import { useMediaQuery } from 'react-responsive';
 
-const Navbar = () => {
+const Navbar = props => {
   const isMobile = useMediaQuery({ query: '(max-width: 1024px)' });
 
   return (
-    <nav className='nav flex-column'>
+    <nav
+      className={
+        props.openSidebar ? 'nav active flex-column' : 'nav flex-column'
+      }>
       <div className='nav__wrapper'>
         <div className='nav__logo flex'>
           <img
@@ -20,8 +23,9 @@ const Navbar = () => {
           />
           <img
             src={require('../assets/img/left-arrow.svg').default}
-            alt='Voltar'
+            alt='Fechar o menu'
             className='nav__logo-icon'
+            onClick={props.handleOpenSidebar}
           />
         </div>
 

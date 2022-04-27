@@ -15,6 +15,7 @@
     &-icon {
       filter: invert(40%) sepia(16%) saturate(5171%) hue-rotate(221deg)
         brightness(73%) contrast(87%);
+      cursor: pointer;
     }
   }
 
@@ -129,6 +130,12 @@
       line-height: calculateRem(12.89px);
       text-align: center;
       color: $text-color;
+    }
+  }
+
+  &.active {
+    @include device(mobile) {
+      display: flex;
     }
   }
 
