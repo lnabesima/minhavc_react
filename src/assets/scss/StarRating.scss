@@ -1,0 +1,22 @@
+@import 'base';
+
+.starRating {
+  &__button {
+    padding-left: calculateRem(10px);
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &-off {
+      width: calculateRem(25.26px);
+      height: calculateRem(24px);
+    }
+
+    &-on {
+      content: url('../img/star-full.svg');
+      width: calculateRem(25.26px);
+      height: calculateRem(24px);
+    }
+  }
+}

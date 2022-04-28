@@ -2,6 +2,7 @@ import React from 'react';
 import GoBackButton from '../components/GoBackButton';
 
 import '../assets/scss/Suggestions.scss';
+import { StarRating } from '../components/StarRating';
 
 const Suggestions = () => {
   return (
@@ -22,41 +23,7 @@ const Suggestions = () => {
               Deixe-nos uma avaliação!
             </p>
             <div className='suggestions__starRating-proper flex'>
-              <img
-                src={require('../assets/img/star-full.svg').default}
-                alt=''
-                className='suggestions__starRating-star'
-                id='star-one'
-                data-value='one'
-              />
-              <img
-                src={require('../assets/img/star-empty.svg').default}
-                alt=''
-                className='suggestions__starRating-star'
-                id='star-two'
-                data-value='two'
-              />
-              <img
-                src={require('../assets/img/star-empty.svg').default}
-                alt=''
-                className='suggestions__starRating-star'
-                id='star-three'
-                data-value='three'
-              />
-              <img
-                src={require('../assets/img/star-empty.svg').default}
-                alt=''
-                className='suggestions__starRating-star'
-                id='star-four'
-                data-value='four'
-              />
-              <img
-                src={require('../assets/img/star-empty.svg').default}
-                alt=''
-                className='suggestions__starRating-star'
-                id='star-five'
-                data-value='five'
-              />
+              <StarRating />
             </div>
           </div>
 
