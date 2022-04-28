@@ -1,8 +1,9 @@
 import React from 'react';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
-import Suggestions from './components/Suggestions';
+
 import './App.scss';
+import { Outlet } from 'react-router';
 
 const App = () => {
   const [openSidebar, setOpenSidebar] = React.useState(false);
@@ -11,13 +12,16 @@ const App = () => {
   }
   return (
     <>
-      <Navbar openSidebar={openSidebar} handleOpenSidebar={handleOpenSidebar}/>
+      <Navbar openSidebar={openSidebar} handleOpenSidebar={handleOpenSidebar} />
       <div className='content'>
         <main>
-          <Suggestions />
+          <Outlet />
         </main>
 
-        <Footer openSidebar={openSidebar} handleOpenSidebar={handleOpenSidebar}/>
+        <Footer
+          openSidebar={openSidebar}
+          handleOpenSidebar={handleOpenSidebar}
+        />
       </div>
     </>
   );

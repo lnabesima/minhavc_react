@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MenuLinks = ({ item }) => {
   const [subMenu, setSubmenu] = React.useState(false);
@@ -11,8 +12,8 @@ const MenuLinks = ({ item }) => {
         key={item.id}
         className='nav__links-item flex'
         onClick={item.subMenu && handleOpenSubMenu}>
-        <a
-          href={item.path}
+        <Link
+          to={item.path}
           className='nav__links-link flex'
           onClick={item.subMenu && handleOpenSubMenu}>
           <img
@@ -21,7 +22,7 @@ const MenuLinks = ({ item }) => {
             className='nav__links-icon'
           />
           <span className='nav__links-label'>{item.label}</span>
-        </a>
+        </Link>
         {item.subMenu && (
           <img
             src={require('../assets/img/more.svg').default}
@@ -33,10 +34,10 @@ const MenuLinks = ({ item }) => {
         <ul className='nav__submenu-list flex-column'>
           {item.subMenu.map(item => (
             <li key={item.id} class='nav__submenu-item'>
-              <a href={item.path} className='nav__submenu-link flex'>
+              <Link to={item.path} className='nav__submenu-link flex'>
                 <img src='' alt='' className='nav__submenu-icon'></img>
                 <span className='nav__submenu-label'>{item.label}</span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
