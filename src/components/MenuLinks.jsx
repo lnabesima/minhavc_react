@@ -1,46 +1,57 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const MenuLinks = ({ item }) => {
   const [subMenu, setSubmenu] = React.useState(false);
-  const handleOpenSubMenu = () => {
+  const handleOpenSubmenu = () => {
     setSubmenu(!subMenu);
   };
   return (
     <>
-      <li
+      <NavLink
         key={item.id}
+        to={item.path}
         className='nav__links-item flex'
-        onClick={item.subMenu && handleOpenSubMenu}>
-        <Link
-          to={item.path}
-          className='nav__links-link flex'
-          onClick={item.subMenu && handleOpenSubMenu}>
+        onClick={item.subMenu && handleOpenSubmenu}
+        style={({ isActive }) => {
+          return {
+            backgroundColor: isActive ? '#FD670012' : '',
+          };
+        }}>
+        <div className='nav__links-wrapper flex'>
           <img
             src={require(`../assets/img/${item.id}.svg`)}
             alt=''
             className='nav__links-icon'
           />
           <span className='nav__links-label'>{item.label}</span>
-        </Link>
+        </div>
         {item.subMenu && (
           <img
             src={require('../assets/img/more.svg').default}
             alt=''
             className='nav__links-more'></img>
         )}
-      </li>
+      </NavLink>
       {subMenu && (
-        <ul className='nav__submenu-list flex-column'>
+        <div className='nav__submenu-list flex-column'>
           {item.subMenu.map(item => (
-            <li key={item.id} class='nav__submenu-item'>
-              <Link to={item.path} className='nav__submenu-link flex'>
-                <img src='' alt='' className='nav__submenu-icon'></img>
-                <span className='nav__submenu-label'>{item.label}</span>
-              </Link>
-            </li>
+            <NavLink
+              to={item.path}
+              key={item.id}
+              className='nav__submenu-item flex'
+              style={({ isActive }) => {
+                return {
+                  backgroundColor: isActive
+                    ? '#5550B21A                  '
+                    : '',
+                };
+              }}>
+              <img src='' alt='' className='nav__submenu-icon'></img>
+              <span className='nav__submenu-label'>{item.label}</span>
+            </NavLink>
           ))}
-        </ul>
+        </div>
       )}
     </>
   );

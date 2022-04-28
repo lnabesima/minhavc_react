@@ -3,7 +3,7 @@ export const NavbarData = [
   {
     id: 'plans',
     label: 'Meus Planos',
-    path: '#',
+    path: '/plans',
     subMenu: [
       { id: 'internet', label: 'Internet', path: '/plans/internet' },
       { id: 'phone', label: 'Telefone', path: '/plans/phone' },
@@ -13,7 +13,7 @@ export const NavbarData = [
   {
     id: 'bills',
     label: 'Faturas',
-    path: '#',
+    path: '/bills',
     subMenu: [
       { id: 'actual', label: 'Fatura Atual', path: '/bills/actual' },
       {
@@ -32,7 +32,7 @@ export const NavbarData = [
   {
     id: 'support',
     label: 'Atendimentos',
-    path: '#',
+    path: '/support',
     subMenu: [
       { id: 'support', label: 'Suporte', path: '/support/support' },
       { id: 'address', label: 'Mudança de Endereço', path: '/support/address' },

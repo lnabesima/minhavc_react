@@ -61,11 +61,11 @@ const Navbar = props => {
         </div>
 
         <div className='nav__sidemenu flex-column'>
-          <ul className='nav__links'>
+          <div className='nav__links'>
             {NavbarData.map(link => (
               <MenuLinks item={link} key={link.id} />
             ))}
-          </ul>
+          </div>
         </div>
       </div>
       {isMobile ? (
