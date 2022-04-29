@@ -5,6 +5,9 @@ import '../assets/scss/Suggestions.scss';
 import { StarRating } from '../components/StarRating';
 
 const Suggestions = () => {
+  const [starRating, setStarRating] = React.useState(0);
+  const [starHover, setStarHover] = React.useState(0);
+
   return (
     <>
       <GoBackButton />
@@ -23,13 +26,24 @@ const Suggestions = () => {
               Deixe-nos uma avaliação!
             </p>
             <div className='suggestions__starRating-proper flex'>
-              <StarRating />
+              <StarRating
+                rating={starRating}
+                setRating={setStarRating}
+                hover={starHover}
+                setHover={setStarHover}
+              />
             </div>
           </div>
 
           <div className='suggestions__textArea'>
-            <p className='suggestions__textArea-label'>Sugestão</p>
-            <textarea className='suggestions__textArea-proper'></textarea>
+            <label
+              className='suggestions__textArea-label'
+              for='suggestions__textArea'>
+              Sugestão
+            </label>
+            <textarea
+              className='suggestions__textArea-proper'
+              id='suggestions__textArea'></textarea>
           </div>
           <button type='submit' className='suggestions__submit grid'>
             Enviar

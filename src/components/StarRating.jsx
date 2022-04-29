@@ -3,10 +3,7 @@ import starEmpty from '../assets/img/star-empty.svg';
 
 import '../assets/scss/StarRating.scss';
 
-export const StarRating = () => {
-  const [rating, setRating] = React.useState(0);
-  const [hover, setHover] = React.useState(0);
-
+export const StarRating = ({ setRating, setHover, rating, hover }) => {
   return (
     <>
       <div className='starRating'>
