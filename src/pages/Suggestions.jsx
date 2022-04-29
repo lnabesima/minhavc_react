@@ -3,10 +3,21 @@ import GoBackButton from '../components/GoBackButton';
 
 import '../assets/scss/Suggestions.scss';
 import { StarRating } from '../components/StarRating';
+import { TextArea } from '../components/TextArea';
 
 const Suggestions = () => {
   const [starRating, setStarRating] = React.useState(0);
   const [starHover, setStarHover] = React.useState(0);
+  const [suggestionTextArea, setSuggestionTextArea] = React.useState();
+
+  const suggestionsTextAreaProps = {
+    label: 'Sugestão',
+    labelClass: 'suggestions__textArea-label',
+    textAreaClass: 'suggestions__textArea-proper',
+    id: 'suggestions__textArea',
+    value: suggestionTextArea,
+    onChange: setSuggestionTextArea,
+  };
 
   return (
     <>
@@ -36,14 +47,16 @@ const Suggestions = () => {
           </div>
 
           <div className='suggestions__textArea'>
-            <label
+            <TextArea props={suggestionsTextAreaProps} />
+            {/* <label
               className='suggestions__textArea-label'
               for='suggestions__textArea'>
               Sugestão
             </label>
             <textarea
               className='suggestions__textArea-proper'
-              id='suggestions__textArea'></textarea>
+              id='suggestions__textArea'></textarea> */}
+            <p>{suggestionTextArea}</p>
           </div>
           <button type='submit' className='suggestions__submit grid'>
             Enviar
