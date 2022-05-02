@@ -7,14 +7,11 @@ import profile from '../assets/img/profile.png';
 import MenuLinks from './MenuLinks';
 import { useMediaQuery } from 'react-responsive';
 
-const Navbar = props => {
+const Navbar = ({ openSidebar, handleOpenSidebar }) => {
   const isMobile = useMediaQuery({ query: '(max-width: 1024px)' });
 
   return (
-    <nav
-      className={
-        props.openSidebar ? 'nav active flex-column' : 'nav flex-column'
-      }>
+    <nav className={openSidebar ? 'nav active flex-column' : 'nav flex-column'}>
       <div className='nav__wrapper'>
         <div className='nav__logo flex'>
           <img
@@ -25,7 +22,7 @@ const Navbar = props => {
             src={require('../assets/img/left-arrow.svg').default}
             alt='Fechar o menu'
             className='nav__logo-icon'
-            onClick={props.handleOpenSidebar}
+            onClick={handleOpenSidebar}
           />
         </div>
 
@@ -63,7 +60,11 @@ const Navbar = props => {
         <div className='nav__sidemenu flex-column'>
           <div className='nav__links'>
             {NavbarData.map(link => (
-              <MenuLinks item={link} key={link.id} />
+              <MenuLinks
+                item={link}
+                key={link.id}
+                handleOpenSidebar={handleOpenSidebar}
+              />
             ))}
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const MenuLinks = ({ item }) => {
+const MenuLinks = ({ item, handleOpenSidebar }) => {
   const [subMenu, setSubmenu] = React.useState(false);
   const handleOpenSubmenu = () => {
     setSubmenu(!subMenu);
@@ -12,7 +12,7 @@ const MenuLinks = ({ item }) => {
         key={item.id}
         to={item.path}
         className='nav__links-item flex'
-        onClick={item.subMenu && handleOpenSubmenu}
+        onClick={!!item.subMenu ? handleOpenSubmenu : handleOpenSidebar}
         style={({ isActive }) => {
           return {
             backgroundColor: isActive ? '#FD670012' : '',
@@ -40,6 +40,7 @@ const MenuLinks = ({ item }) => {
               to={item.path}
               key={item.id}
               className='nav__submenu-item flex'
+              onClick={handleOpenSidebar}
               style={({ isActive }) => {
                 return {
                   backgroundColor: isActive
@@ -47,7 +48,7 @@ const MenuLinks = ({ item }) => {
                     : '',
                 };
               }}>
-              <img src='' alt='' className='nav__submenu-icon'></img>
+              <div className='nav__submenu-icon'></div>
               <span className='nav__submenu-label'>{item.label}</span>
             </NavLink>
           ))}
