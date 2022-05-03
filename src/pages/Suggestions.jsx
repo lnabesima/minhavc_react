@@ -11,10 +11,9 @@ const Suggestions = () => {
   const [starRating, setStarRating] = React.useState(0);
   const [starHover, setStarHover] = React.useState(0);
   const [suggestionTextArea, setSuggestionTextArea] = React.useState();
-
+  const [visibleToast, setVisibleToast] = React.useState(false);
 
   const componentRef = React.useRef();
-  const snackRef = React.useRef();
 
   const { width } = useContainerDimensions(componentRef);
 
@@ -45,7 +44,7 @@ const Suggestions = () => {
     setSuggestionTextArea('');
     setStarRating(0);
     setStarHover(0);
-
+    setVisibleToast(true);
   }
 
   return (
@@ -81,7 +80,8 @@ const Suggestions = () => {
           <ToastNotification
             onSuccess={'Sugestão enviada com sucesso!'}
             width={width}
-            ref={snackRef}
+            visibleToast={visibleToast}
+            setVisibleToast={setVisibleToast}
           />
 
           <div className='suggestions__textArea'>

@@ -15,8 +15,15 @@
     transition: all 0.5s ease-in-out 0.5s;
 
     @include device(mobile) {
-      width: 100%;
+      width: 90%;
     }
+  }
+
+  &__label{
+    font-weight: 500;
+    font-size: calculateRem(16px);
+    line-height: calculateRem(19.5px);
+    color: white
   }
 
   &.success {
