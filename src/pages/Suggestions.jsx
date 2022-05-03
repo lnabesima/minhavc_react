@@ -19,6 +19,20 @@ const Suggestions = () => {
     onChange: setSuggestionTextArea,
   };
 
+  const suggestion = {
+    rating: starRating,
+    text: suggestionTextArea,
+  };
+
+  function handleSendSuggestion(event) {
+    event.preventDefault();
+    suggestion.rating = starRating;
+    suggestion.text = suggestionTextArea;
+    console.log(suggestion);
+    setStarRating(0);
+    setSuggestionTextArea('');
+  }
+
   return (
     <>
       <GoBackButton />
@@ -48,17 +62,11 @@ const Suggestions = () => {
 
           <div className='suggestions__textArea'>
             <TextArea props={suggestionsTextAreaProps} />
-            {/* <label
-              className='suggestions__textArea-label'
-              for='suggestions__textArea'>
-              Sugestão
-            </label>
-            <textarea
-              className='suggestions__textArea-proper'
-              id='suggestions__textArea'></textarea> */}
-            <p>{suggestionTextArea}</p>
           </div>
-          <button type='submit' className='suggestions__submit grid'>
+          <button
+            type='submit'
+            className='suggestions__submit grid'
+            onClick={handleSendSuggestion}>
             Enviar
           </button>
         </form>
