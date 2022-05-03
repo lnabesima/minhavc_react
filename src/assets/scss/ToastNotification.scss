@@ -1,0 +1,33 @@
+@import 'base';
+
+.toast {
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+
+  &__proper {
+    width: calculateRem(500px);
+    height: calculateRem(52px);
+    background-color: $ok-green;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: all 0.5s ease-in-out 0.5s;
+
+    @include device(mobile) {
+      width: 100%;
+    }
+  }
+
+  &.success {
+    background: $ok-green;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}

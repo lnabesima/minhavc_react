@@ -12,17 +12,20 @@ const App = () => {
   }
   return (
     <>
-      <Navbar openSidebar={openSidebar} handleOpenSidebar={handleOpenSidebar} />
-      <div className='content'>
-        <main>
-          <Outlet />
-        </main>
-
-        <Footer
+        <Navbar
           openSidebar={openSidebar}
           handleOpenSidebar={handleOpenSidebar}
         />
-      </div>
+        <div className='content'>
+          <main id='main'>
+            <Outlet />
+          </main>
+
+          <Footer
+            openSidebar={openSidebar}
+            handleOpenSidebar={handleOpenSidebar}
+          />
+        </div>
     </>
   );
 };
