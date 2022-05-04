@@ -19,11 +19,12 @@
     }
   }
 
-  &__label{
+  &__label {
     font-weight: 500;
     font-size: calculateRem(16px);
     line-height: calculateRem(19.5px);
-    color: white
+    color: white;
+    text-align: center;
   }
 
   &.success {
